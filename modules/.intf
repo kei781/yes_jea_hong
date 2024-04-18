@@ -1,0 +1,17 @@
+Context: {
+  member: User, setMember: Fn(Member),
+  loading: Bool, setLoading: Fn(Bool),
+  toast: String, setToast(String),
+  Fetch: AsyncFn({ path, body })
+}
+- Member: null || { { member_id, org_id, org_name, nickname, member_type } }
+
+
+Enum: { MEMBER_TYPE, MEMBER_CLASS, AUTH_TYPE, HOST }
+
+//시스템내 상수
+Bridge: {  }
+
+Banner: { text, img }
+  - text: string
+  - img: string(url)

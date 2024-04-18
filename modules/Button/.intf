@@ -1,0 +1,5 @@
+buttons({ text[, width, heigh, styled ]})
+  - text: ''
+  - width: number(dafalut: 206)
+  - heigh: number(dafalut: 91)
+  - styled: 0 or 1(dafalut: 0)
