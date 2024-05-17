@@ -3,17 +3,14 @@ import Enum from '../../modules/Enum';
 import { useRouter } from 'next/router';
 
 const examp_user = {nickname: "존잘훈남노상운"}
+const examp_member = {
+  active: false,
+  member_id: "존잘훈남 노상운"
+}
 
 export default () => {
   const router = useRouter()
   const clicked = (href) => router.asPath.startsWith(href) ? 'active' : ''
-
-  console.log(clicked('/menu1/'))
-
-  const examp_member = {
-    active: false,
-    member_id: "존잘훈남 노상운"
-  }
   
   return (
     <>
@@ -72,9 +69,11 @@ export default () => {
         .container{
           margin: 0 auto;
           display: flex; gap: 30px;
+          flex-wrap: nowrap; /* 요소들이 가로로 정렬되도록 설정 */
         }
         .main_menu > a{
           text-align: center; font-size: 25px; font-weight: 800;
+          flex-shrink: 0; /* 요소가 줄어들지 않도록 설정 */
         }
         a{
           color: #343434; text-align: center; font-size: 15px; font-weight: 800;

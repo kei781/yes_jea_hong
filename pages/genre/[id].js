@@ -6,6 +6,7 @@ import BoardTabs from "../../modules/Tabs/BoardTabs";
 import Button from "../../modules/Button/Button";
 import BoardTable from "../../components/BoardTable";
 import Pagination from "../../modules/Pagination";
+import { useRouter } from "next/router";
 
 const examp_submenu_tab = [
   { title: "락", value: "1", },
@@ -34,39 +35,13 @@ const exampDate = [
 ]
 const exampCount = 100
 
-export default function genre() {
-  const [keyword, setKeyword] = useState('')
-  const [selectTab, setSelectTab] = useState('')
-  const [pagination, setPagination] = useState(1)
+export default function detail(props) {
+  const router = useRouter();
+  const { id } = router.query;
   
   return (<>
-    <Banner text={"장르별"} img={"/compornent/_app/background_examp_img.png"}/>
-    <Distance height={27} />
-    <div className="centerAlign">
-      <BoardTabs submenus={examp_submenu_tab} value={selectTab} onChange={setSelectTab}/>
-    </div>
-    <Distance height={33} />
-    <div className="search">
-      <SearchInput value={keyword} onChange={setKeyword} width={336} height={62}/>
-      <Button text={"등록"}/>
-    </div>
-    <Distance height={31} />
-    <BoardTable rows={exampDate} />
-    <Distance height={32} />
-    <div className="wrapPaginatin">
-      <Pagination value = {pagination} onChange = {setPagination} count = {exampCount}/>
-    </div>
+    <div>123123123</div>
     <style jsx>{`
-      .centerAlign{
-        display: flex; justify-content: center;
-      }
-      .search{
-        padding-right: 31px;
-        display: flex; justify-content: right; gap: 12px;
-      }
-      .wrapPaginatin{
-        display: flex; justify-content: center;
-      }
     `}</style>
   </>
   )
